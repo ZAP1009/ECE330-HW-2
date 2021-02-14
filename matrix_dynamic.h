@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#define FORMAT "%8.3lf"
+#define FORMAT "%5d"
 
-typedef double T;
+typedef int T;
 
 typedef struct {
   int  row_dim, col_dim;
