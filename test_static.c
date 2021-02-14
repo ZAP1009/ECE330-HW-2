@@ -10,13 +10,15 @@ int main()
   equate(&a,&b);
   printf("\n Matrix a:");
   matrix_print(a);
-  c = create_empty(2,2);
+  matrix c = create_empty(2,2);
   c = transpose(a);
-  printf("\n Matrix c:")
-  matrix_print(c)
+  printf("\n Transpose of matrix a:");
+  matrix_print(c);
   printf("\n Matrix b:");
   matrix_print(b);
   printf("\n a+b:");
   matrix_print(add(a,b));
+  printf("\n Transpose of a+b:");
+  matrix_print(transpose(add(a,b)));
 }
 
