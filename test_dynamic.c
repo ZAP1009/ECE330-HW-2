@@ -10,9 +10,13 @@ int main()
   equate(&a,&b);
   printf("\n Matrix a:");
   matrix_print(a);
+  printf("\n Transpose of Matrix a:");
+  matrix_print(transpose(a));
   printf("\n Matrix b:");
   matrix_print(b);
   printf("\n a+b:");
   matrix_print(add(a,b));
+  printf("\n Transpose of a+b:");
+  matrix_print(transpose(add(a,b)));
 }
 

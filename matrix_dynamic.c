@@ -48,13 +48,14 @@ matrix create_initvals(int rdim, int cdim, T* initval)
   return result;
 }
 
-void destroy(matrix m)
+void destroy(matrix *m)
 {
   int i;
-  for (i=0; i<m.row_dim; i++)
-    free(m.element[i]);
-  free(m.element);
-  free(&m);
+  for (i=0; i<m->row_dim; i++){
+    free(m->element[i]);
+	}
+  free(m->element);
+  free(m);
 }
 
 T retrieve(int row, int col, matrix m)
@@ -147,5 +148,16 @@ void equate(matrix* m1, matrix* m2)
   for (i=0; i<m1->row_dim; i++)
     for (j=0; j<m1->col_dim; j++)
       m2->element[i][j] = m1->element[i][j];
+}
+
+matrix transpose(matrix M_1){
+	int i,j;
+	matrix M_t = create_empty(M_1.row_dim, M_1.col_dim);
+	for(i=0;i<M_1.row_dim;i++){
+		for(j=0; j<M_1.col_dim; j++){
+			 assign(j,i,&M_t,retrieve(i,j,M_1));
+		}
+	}
+	return M_t;
 }
 

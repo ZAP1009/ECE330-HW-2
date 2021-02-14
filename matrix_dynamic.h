@@ -17,7 +17,7 @@ typedef struct {
 matrix create_empty(int rdim, int cdim);
 matrix create_initval(int rdim, int cdim, T val);
 matrix create_initvals(int rdim, int cdim, T* initval);
-void destroy(matrix);
+void destroy(matrix *m);
 void matrix_print(matrix);
 T retrieve(int row, int col, matrix m);  /* retrieve an element from m */
 void assign(int row, int col, matrix*, T val); /* assign a value to an element of m */
