@@ -4,11 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#define FORMAT "%5d"
+#define FORMAT "%8.3lf"
 #define MAX_ROW 10
 #define MAX_COL 10
 
-typedef int T;
+typedef double T;
 
 typedef struct {
   int  row_dim, col_dim;
